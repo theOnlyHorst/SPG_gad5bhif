@@ -6,10 +6,13 @@ using UnityEngine.AI;
 public class PlayerBehaviour : Bolt.EntityBehaviour<IMyPlayerState>
 {
     private NavMeshAgent agent;
+
+    private BoltEntity ent;
     public override void Attached()
     {
         state.SetTransforms(state.MyPlayerStateTransform,transform);
         agent = GetComponent<NavMeshAgent>();
+        ent = GetComponent<BoltEntity>();
     }
 
     public override void SimulateOwner()
@@ -23,4 +26,11 @@ public class PlayerBehaviour : Bolt.EntityBehaviour<IMyPlayerState>
         }
     }
    
+    private void OnTriggerEnter(Collider other) {
+        if(ent.IsOwner&&other.tag == "Collectible")
+        {
+            state.MyPlayerStatePoints++;
+            Debug.Log(state.MyPlayerStatePoints);
+        }
+    }
 }
