@@ -3354,7 +3354,6 @@
         {
           "Name": "MyPlayerStatePoints",
           "Enabled": true,
-          "Expanded": true,
           "ReplicationMode": 1,
           "Priority": 1,
           "PropertyType": {
@@ -3534,6 +3533,15 @@
       },
       "Name": "MyCollectibleState",
       "Guid": "44d23e01-c37c-4e29-864f-650d0573f281",
+      "Groups": [
+        "MyStuff"
+      ]
+    },
+    {
+      "$type": "Bolt.Compiler.EventDefinition, bolt.compiler",
+      "Properties": [],
+      "Name": "ScoreEvent",
+      "Guid": "008a7d6b-1ef4-4d4b-9994-b93c38eaa7c2",
       "Groups": [
         "MyStuff"
       ]
